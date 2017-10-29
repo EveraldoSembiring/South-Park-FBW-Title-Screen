@@ -48,6 +48,7 @@ public class TitleSceneController : MonoBehaviour {
 
     public void AnimateShatterGlass()
     {
+        GetComponent<AudioSource>().Play();
         StartCoroutine(BlurIterator());
         DOTween.To(() => _VignetteSetting.intensity, x => _VignetteSetting.intensity = x, 0.256f, 0.5f);
         _GlassEffect.EffectMaterial.DOFloat(1, "_GlassThreshold", 0.5f).OnComplete(StartGlow);

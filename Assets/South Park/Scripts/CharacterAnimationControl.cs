@@ -21,6 +21,7 @@ public class CharacterAnimationControl : MonoBehaviour {
     {
         Controller.ReturnSprite(this);
         Controller.PickSprite(this);
+        CharImage.rectTransform.sizeDelta = CharImage.sprite.rect.size;
         StartCoroutine(AnimateCharacter());
     }
 
